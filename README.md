@@ -34,20 +34,34 @@ This repository contains three distinct CrewAI projects:
 **Purpose:** AI-powered code generation and development assistance
 
 **Description:**
-A multi-agent system designed to assist with coding tasks. The Coder Crew leverages AI agents with specialized roles in software development to help write, review, and improve code.
+A sophisticated AI developer that leverages multiple agents to plan, write, and execute Python code. The Coder Crew takes high-level goals and produces fully functional Python code with comprehensive documentation.
 
 **Key Features:**
-- Multiple AI agents with different coding specialties
-- Collaborative code generation and review
-- Research capabilities for LLM-related topics
-- Automated report generation
+- Intelligent code planning and structured development
+- Python code generation with best practices
+- Automatic code execution and validation
+- Comprehensive documentation and output reporting
+- Collaborative agent-based development approach
+
+**Agents:**
+- **Coder Agent** - Seasoned Python developer who plans, writes, and tests code
+
+**Workflow:**
+1. Receives a development goal
+2. Plans the code structure and approach
+3. Writes clean, efficient Python code
+4. Executes the code to validate it works
+5. Generates a report with code and execution output
 
 **Key Files:**
-- `src/coder/config/agents.yaml` - Agent definitions
-- `src/coder/config/tasks.yaml` - Task definitions
-- `src/coder/crew.py` - Core crew logic
-- `src/coder/main.py` - Entry point with custom inputs
-- `src/coder/tools/` - Custom tools directory
+- `src/coder/config/agents.yaml` - Agent definitions and capabilities
+- `src/coder/config/tasks.yaml` - Task definitions (coding_task)
+- `src/coder/crew.py` - Crew orchestration logic
+- `src/coder/main.py` - Entry point (accepts custom goals as input)
+- `src/coder/tools/` - Custom development tools
+
+**Output:**
+- `output/code_and_output.txt` - Generated code with execution results and documentation
 
 **Basic Usage:**
 ```bash
@@ -55,55 +69,94 @@ cd coder
 crewai run
 ```
 
+**Example Use Cases:**
+- Generate Python utilities and helper functions
+- Build data processing scripts
+- Create automation tools
+- Develop learning projects and prototypes
+
 ---
 
 ### 2. **Engineering Team Crew** (`engineering_team/`)
 
-**Purpose:** Software engineering and architecture planning
+**Purpose:** Full-stack software engineering and development
 
 **Description:**
-The Engineering Team Crew simulates a collaborative engineering team with diverse expertise. It's designed for architectural decisions, software design reviews, and engineering project planning.
+A complete engineering team simulation that takes high-level requirements and produces a full-stack solution including design documentation, backend code, frontend UI, and comprehensive unit tests. Perfect for end-to-end project development.
 
 **Key Features:**
-- Full engineering team simulation
-- Architectural and design collaboration
-- Task decomposition and planning
-- Comprehensive reporting
+- Complete software development lifecycle (SDLC) automation
+- Detailed architectural design generation
+- Full-stack code development (backend + frontend)
+- Gradio UI generation for quick prototypes
+- Comprehensive unit testing
+- Context-aware task dependencies
+- Production-ready output generation
+
+**Agents:**
+- **Engineering Lead** - Creates detailed design specifications from requirements
+- **Backend Engineer** - Implements the design with clean, efficient code
+- **Frontend Engineer** - Builds Gradio UI for demonstration and interaction
+- **Test Engineer** - Writes comprehensive unit tests for code coverage
+
+**Workflow:**
+1. Receives high-level requirements and module specifications
+2. Engineering Lead creates detailed design documentation
+3. Backend Engineer develops the Python module based on design
+4. Frontend Engineer creates Gradio UI for the module
+5. Test Engineer writes comprehensive unit tests
+6. All outputs are compiled into organized deliverables
 
 **Key Files:**
-- `src/engineering_team/config/agents.yaml` - Agent definitions
-- `src/engineering_team/config/tasks.yaml` - Task definitions
-- `src/engineering_team/crew.py` - Core crew logic
-- `src/engineering_team/main.py` - Entry point with custom inputs
-- `src/engineering_team/tools/` - Custom tools directory
-- `output/` - Generated outputs (code designs, specifications)
+- `src/engineering_team/config/agents.yaml` - Multi-agent team definitions
+- `src/engineering_team/config/tasks.yaml` - Task pipeline with dependencies
+- `src/engineering_team/crew.py` - Crew orchestration and process management
+- `src/engineering_team/main.py` - Entry point (accepts requirements, module name, class name)
+- `src/engineering_team/tools/` - Development and utility tools
+
+**Output Generated:**
+- `output/{module_name}_design.md` - Architectural design document
+- `output/{module_name}.py` - Backend Python module
+- `output/app.py` - Gradio UI frontend
+- `output/test_{module_name}.py` - Unit tests module
 
 **Basic Usage:**
 ```bash
 cd engineering_team
+# Modify main.py to provide requirements and module specifications
 crewai run
 ```
 
----
+**Example Use Cases:**
+- Rapid prototyping of software components
+- End-to-end feature development
+- Creating data processing pipelines with UI
+- Building microservice modules
+- Developing utility libraries with tests
+- Learning and training projects
+
+**Key Advantages:**
+- Produces publication-ready code and documentation
+- Includes both backend logic and user interface
+- Comprehensive test coverage from the start
+- Clear design-to-implementation traceability
+- Self-contained modules ready for deployment
 
 ### 3. **Latest AI Development Crew** (`latest_ai_development/`)
 
 **Purpose:** Research and exploration of cutting-edge AI technologies
 
 **Description:**
-Focused on researching and synthesizing the latest developments in artificial intelligence. This crew stays updated with current AI trends, methodologies, and breakthroughs. It uses **Serper search engine** to conduct real-time web searches for the latest AI developments.
+Focused on researching and synthesizing the latest developments in artificial intelligence. This crew stays updated with current AI trends, methodologies, and breakthroughs. It integrates **Serper search engine** for conducting real-time web searches to find the latest AI developments.
 
 **Key Features:**
-- AI research and trend analysis with real-time search
-- Technology exploration using Serper search engine
-- Comprehensive documentation
-- Best practices synthesis
-- Web-based information gathering
+- AI research and trend analysis with real-time web search
+- Technology exploration using Serper search engine integration
+- Comprehensive research reports and documentation
+- Best practices synthesis from latest sources
 
-**Tools & Integrations:**
-- **Serper Search Engine** (`SerperDevTool`) - Real-time web search for latest AI trends and developments
-  - Requires `SERPER_API_KEY` environment variable
-  - Integrated in the researcher agent for conducting thorough searches
+**Key Tools:**
+- **Serper Search Engine** (`SerperDevTool`) - Get your API key from [https://serper.dev](https://serper.dev)
 
 **Key Files:**
 - `src/latest_ai_development/config/agents.yaml` - Agent definitions
@@ -112,19 +165,10 @@ Focused on researching and synthesizing the latest developments in artificial in
 - `src/latest_ai_development/main.py` - Entry point with custom inputs
 - `src/latest_ai_development/tools/` - Custom tools directory
 
-**Setup Requirements:**
-Before running, ensure you have:
-```bash
-# Set your Serper API key in .env file
-SERPER_API_KEY=your_serper_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-Get your Serper API key from: [https://serper.dev](https://serper.dev)
-
 **Basic Usage:**
 ```bash
 cd latest_ai_development
+# Make sure to set SERPER_API_KEY in .env file
 crewai run
 ```
 
@@ -241,16 +285,7 @@ project_name/
    crewai install
    ```
 
-3. **Set up environment:**
-   ```bash
-   # Create .env file from .env.example (if available)
-   cp .env.example .env
-   
-   # Add your OpenAI API key
-   # Edit .env and set: OPENAI_API_KEY=sk-...
-   ```
-
-4. **Verify installation:**
+3. **Verify installation:**
    ```bash
    python -c "import crewai; print(crewai.__version__)"
    ```
@@ -324,21 +359,6 @@ task_name:
   expected_output: "Format and details of expected output"
   agent: agent_name
 ```
-
-### Set Environment Variables
-
-Create `.env` file in your project:
-
-```bash
-OPENAI_API_KEY=sk-...
-SERPER_API_KEY=...  # Required for latest_ai_development project (get from https://serper.dev)
-# Optional: Add other API keys or settings
-```
-
-**Note for latest_ai_development:**
-- The researcher agent uses Serper search engine to find latest AI developments
-- Sign up at [https://serper.dev](https://serper.dev) to get your free API key
-- Add the key to your `.env` file as shown above
 
 ### Access User Preferences
 
