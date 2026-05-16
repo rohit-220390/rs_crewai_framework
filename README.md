@@ -505,10 +505,6 @@ Each project generates outputs in their respective directories:
 
 Check the `output/` directory in each project for results.
 
-## 📄 License
-
-This project uses CrewAI framework. Refer to individual project licenses and CrewAI's licensing terms.
-
 ## 🎓 Version Information
 
 - **Python:** 3.10 - 3.13
