@@ -1,6 +1,64 @@
-# EngineeringTeam Crew
+# Engineering Team Crew (engineering_team/)
+Purpose: Full-stack software engineering and development
 
-Welcome to the EngineeringTeam Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Description: A complete engineering team simulation that takes high-level requirements and produces a full-stack solution including design documentation, backend code, frontend UI, and comprehensive unit tests. Perfect for end-to-end project development.
+
+Key Features:
+
+Complete software development lifecycle (SDLC) automation
+Detailed architectural design generation
+Full-stack code development (backend + frontend)
+Gradio UI generation for quick prototypes
+Comprehensive unit testing
+Context-aware task dependencies
+Production-ready output generation
+Agents:
+
+Engineering Lead - Creates detailed design specifications from requirements
+Backend Engineer - Implements the design with clean, efficient code
+Frontend Engineer - Builds Gradio UI for demonstration and interaction
+Test Engineer - Writes comprehensive unit tests for code coverage
+Workflow:
+
+Receives high-level requirements and module specifications
+Engineering Lead creates detailed design documentation
+Backend Engineer develops the Python module based on design
+Frontend Engineer creates Gradio UI for the module
+Test Engineer writes comprehensive unit tests
+All outputs are compiled into organized deliverables
+Key Files:
+
+src/engineering_team/config/agents.yaml - Multi-agent team definitions
+src/engineering_team/config/tasks.yaml - Task pipeline with dependencies
+src/engineering_team/crew.py - Crew orchestration and process management
+src/engineering_team/main.py - Entry point (accepts requirements, module name, class name)
+src/engineering_team/tools/ - Development and utility tools
+Output Generated:
+
+output/{module_name}_design.md - Architectural design document
+output/{module_name}.py - Backend Python module
+output/app.py - Gradio UI frontend
+output/test_{module_name}.py - Unit tests module
+Basic Usage:
+
+cd engineering_team
+# Modify main.py to provide requirements and module specifications
+crewai run
+Example Use Cases:
+
+Rapid prototyping of software components
+End-to-end feature development
+Creating data processing pipelines with UI
+Building microservice modules
+Developing utility libraries with tests
+Learning and training projects
+Key Advantages:
+
+Produces publication-ready code and documentation
+Includes both backend logic and user interface
+Comprehensive test coverage from the start
+Clear design-to-implementation traceability
+Self-contained modules ready for deployment
 
 ## Installation
 
