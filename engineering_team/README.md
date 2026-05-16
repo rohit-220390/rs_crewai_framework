@@ -1,4 +1,4 @@
-# Engineering Team Crew (engineering_team/)
+# Engineering Team Crew 
 Purpose: Full-stack software engineering and development
 
 Description: A complete engineering team simulation that takes high-level requirements and produces a full-stack solution including design documentation, backend code, frontend UI, and comprehensive unit tests. Perfect for end-to-end project development.
